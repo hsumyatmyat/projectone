@@ -1,0 +1,77 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+   font-family: sans-serif;
+   height: 100vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   margin: 0;
+   overflow: hidden;
+}
+
+.container{
+    /* vw = view port width */
+    width: 90vw;
+
+    display: flex;
+}
+
+.panel{
+     /* vh = view port height */
+    height: 80vh;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+
+    margin: 10px;
+
+    /* flex-wrap: wrap;*/ /*play in user's screen size  */
+    flex: 0.5;    /* scale in/out, work in div*/
+    /* mini 0.5 */
+
+    position: relative;
+
+    transition: all 0.7s ease-in;
+    
+}
+
+.panel h3{
+    /* the background is base on h3 */
+    font-size: 24px;
+
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    margin: 0;
+
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+}
+
+@media(max-width:500px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(5),.panel:nth-of-type(6){
+        display: none;
+    }
+}
